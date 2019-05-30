@@ -10,26 +10,51 @@ sabao = BeautifulSoup(r.text , 'html.parser')
 
 
 '''Dólar'''
-ensaboado = sabao.find_all(class_="subtituloGrafico subtituloGraficoValor")[0]
-remove = (ensaboado.text).replace("R$", "")
-cotacaodolar = float(remove.replace(",", "."))
+try:
+	ensaboado = sabao.find_all(class_="subtituloGrafico subtituloGraficoValor")[0]
+	remove = (ensaboado.text).replace("R$", "")
+	cotacaodolar = float(remove.replace(",", "."))
+except Exception:
+	from dolareuro import jogadolar
+	cotacaodolar = jogadolar()
+
 '''Euro'''
-ensaboado2 = sabao.find_all(class_="subtituloGrafico subtituloGraficoValor")[2]
-rem = (ensaboado2.text).replace("R$", "")
-cotacaoeuro = float(rem.replace(",", "."))
+try:
+	ensaboado2 = sabao.find_all(class_="subtituloGrafico subtituloGraficoValor")[2]
+	rem = (ensaboado2.text).replace("R$", "")
+	cotacaoeuro = float(rem.replace(",", "."))
+except Exception:
+	from dolareuro import jogaeuro
+	cotacaoeuro = jogaeuro()
+	
+	
 '''Data de atualização'''
-ensaboado3 = sabao.find(class_="section-info")
-data = (ensaboado3.text).replace("Câmbio","").replace("    ", " ")
+try:
+	ensaboado3 = sabao.find(class_="section-info")
+	data = (ensaboado3.text).replace("Câmbio","").replace("    ", " ")
+except Exception:
+	data = " Atualizado em não encontrado "
+
 '''Bitcoin'''
-ensaboado4 = sabao.find_all(class_="linhaDados")[3]
-r = (ensaboado4.text).replace("Bitcoin","").replace("%US$","")
-l = r.split()
-cotacaobitcoin = cotacaodolar*float(str(l.pop(1)).replace(".","").replace(",","."))
+try:
+	ensaboado4 = sabao.find_all(class_="linhaDados")[3]
+	r = (ensaboado4.text).replace("Bitcoin","").replace("%US$","")
+	l = r.split()
+	cotacaobitcoin = cotacaodolar*float(str(l.pop(1)).replace(".","").replace(",","."))
+except Exception:
+	from dolareuro import jogabit
+	cotacaobitcoin = jogabit()
+
+
 cotacaobitcoindol = cotacaodolar/cotacaobitcoin
 cotacaobitcoineur = cotacaoeuro/cotacaobitcoin
+
 '''Notícia'''
-ensaboado5 = sabao.find_all('h1')[0]
-noticia = ensaboado5.text
+try:
+	ensaboado5 = sabao.find_all('h1')[0]
+	noticia = ensaboado5.text
+except Exception:
+	noticia = "Não encontrado"
 	
 
 
