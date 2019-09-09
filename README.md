@@ -11,4 +11,4 @@ bem simples, basta escrever o nome da moeda que deseja converter e o valor que q
 
 
 
- Disponibilizarei em breve a versão atualizada do arquivo executável.
+ 
