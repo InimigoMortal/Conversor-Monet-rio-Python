@@ -11,4 +11,4 @@ bem simples, basta escrever o nome da moeda que deseja converter e o valor que q
 
 
 
-O negócio de tirar valores do Google está desatualizado! Atualmente pegamos o valor do Yahoo caso dê erro. Disponibilizarei em breve a versão atualizada.
+O negócio de tirar valores do Google está desatualizado! Atualmente pegamos o valor do Yahoo caso dê erro. Disponibilizarei em breve a versão atualizada do arquivo executável.
