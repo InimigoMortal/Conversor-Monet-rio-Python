@@ -99,7 +99,7 @@ def conversor(x,carac1):
 
 
 print("Conversor monetário desenvolvido por InimigoMortal")
-print("Os valores são tirados em tempo real do https://economia.uol.com.br/cotacoes ")
+print("Os valores são tirados em tempo real do https://economia.uol.com.br/cotacoes\nEm caso de erro os valores são tirados do Yahoo! " ")
 print("Dólar: " + str(cotacaodolar) + " Euro: " + str(cotacaoeuro) + " Bitcoin: " + str(round(cotacaobitcoin, 2)) + data)
 print("Notícia: " + noticia)
 print("")
