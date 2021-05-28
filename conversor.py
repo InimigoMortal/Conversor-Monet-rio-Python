@@ -28,7 +28,7 @@ def jogaeuro():
     valoreuro = float(esb)
     return valoreuro
 def jogabit():
-    leia = le.find_all('span')[30]       
+    leia = le.find_all('span')[24]       
     valorbit = float(leia.text.replace("R$","").replace(",00","").replace(".",""))
     return valorbit
 
