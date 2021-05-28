@@ -36,7 +36,7 @@ def jogabit():
 
 '''Dólar'''
 try:
-	ensaboado = sabao.find_all(class_="subtituloGrafico subtituloGraficoValor#TESTEERRO")[0]
+	ensaboado = sabao.find_all(class_="subtituloGrafico subtituloGraficoValor")[0]
 	remove = (ensaboado.text).replace("R$", "")
 	cotacaodolar = float(remove.replace(",", "."))
 except Exception:
@@ -47,7 +47,7 @@ except Exception:
 
 '''Euro'''
 try:
-	ensaboado2 = sabao.find_all(class_="subtituloGrafico subtituloGraficoValorTESTEERRO")[2]
+	ensaboado2 = sabao.find_all(class_="subtituloGrafico subtituloGraficoValor")[2]
 	rem = (ensaboado2.text).replace("R$", "")
 	cotacaoeuro = float(rem.replace(",", "."))
 except Exception:
@@ -58,7 +58,7 @@ except Exception:
 '''Bitcoin'''
 
 try:
-	ensaboado4 = sabao.find_all('tr',class_="linhaDadosTESTEERRO")[3]
+	ensaboado4 = sabao.find_all('tr',class_="linhaDados")[3]
 	r = ensaboado4.text[16::].replace('.',"")
 	r2 = r[:-4]
 	cotacaobitcoin = int(r2)
